@@ -1,1 +1,1 @@
-# rsschool-cv
+# https://ErricoMalatesta.github.io/rsschool-cv/cv
