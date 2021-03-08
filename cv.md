@@ -147,4 +147,4 @@ async function writeInFile(json) {
 
 *** 
 ## English: 
- Probably B1. Have good reading and writing skills
+ Probably B1. Have good reading and writing skills. Can read library documentation.
