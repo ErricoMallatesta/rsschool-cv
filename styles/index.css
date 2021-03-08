@@ -1,0 +1,104 @@
+*{
+    transition: all 0.5s;
+}
+
+body {
+    max-width: 1060px;
+    margin: 10px auto auto auto;
+
+    font-family: "Open Sans", sans-serif;
+
+    background: cadetblue;
+}
+
+main{
+    background-color: white!important;
+    box-shadow: 0 1.5rem 1.5rem rgba(0,0,0,.75)!important;
+}
+
+.head-block{
+    padding: 50px;
+    background-color: mediumspringgreen;
+}
+
+main, 
+.head-block{
+    border-radius: 10px 10px 0 0;
+}
+
+.head-content{
+    display: flex;
+    flex-wrap: wrap;  
+}
+
+.head-image{
+    width: 33.33333%;  
+}
+
+.head-text{
+    width: 66.66667%; 
+
+    text-align: left;
+}
+
+.avatar{
+    margin: 20px 0 -80px 0;
+    max-width: 210px;
+    padding: 9px 5px 5px;
+
+    text-align: center;
+
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    background-color: #fff!important;
+}
+
+.avatar:hover{
+    -webkit-transition: transform 0.5s ease-in-out;
+    transform: translateY(-10px);
+}
+
+section {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+section:not(.head-block) div {
+    padding: 5px; 
+}
+
+.first-row{
+    padding-top: 40px;
+}
+
+.skills{
+    list-style-type: none;
+}
+
+.skills li{
+    margin: 0 0 5px 0;
+}
+
+footer{
+    margin: 20px 0 20px 0;
+
+    text-align: center;
+}
+
+
+h1{
+    font-size: 40px;
+
+    color: white;
+}
+
+h2{
+    color: black;
+}
+
+hr{
+    opacity: .25;
+}
+
+a{
+    color: orange;
+}
