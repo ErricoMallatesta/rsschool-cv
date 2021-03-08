@@ -1,1 +1,1 @@
-# https://ErricoMalatesta.github.io/rsschool-cv
+# https://ErricoMallatesta.github.io/rsschool-cv
