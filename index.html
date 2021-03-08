@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My CV</title>
+        <style>
+body {
+    max-width: 1060px;
+    margin: 10px auto auto auto;
+
+    font-family: "Open Sans", sans-serif;
+}
+
+main{
+    background-color: white!important;
+    box-shadow: 0 1.5rem 1.5rem rgba(0,0,0,.75)!important;
+}
+
+.head-block{
+    padding: 50px;
+
+    background-color: mediumspringgreen;
+    border-radius: 10px 10px 0 0;
+}
+
+.head-content{
+    display: flex;
+    flex-wrap: wrap;  
+}
+
+.head-image{
+    width: 33.33333%;  
+}
+
+.head-text{
+    width: 66.66667%; 
+
+    text-align: left;
+}
+
+.avatar{
+    margin: 20px 0 -80px 0;
+    max-width: 210px;
+    padding: 9px 5px 5px;
+
+    text-align: center;
+
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    background-color: #fff!important;
+}
+
+section {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+section:not(.head-block) div {
+    padding: 5px; 
+}
+
+footer{
+    margin: 20px 0 20px 0;
+
+    text-align: center;
+}
+
+
+h1{
+    font-size: 40px;
+
+    color: white;
+}
+
+h2{
+    color: black;
+}
+
+hr{
+    opacity: .25;
+}
+
+a{
+    color: orange;
+}
+
+.first-row{
+    padding-top: 40px;
+}
+
+.skills{
+    list-style-type: none;
+}
+
+.skills li{
+    margin: 0 0 5px 0;
+}
+</style>
+</head>
+<body>
+    <main>
+        <section class="head-block">
+            <div class="head-content">
+                <div class="head-image">
+                    <div class="avatar">
+                        <img src="https://i.pinimg.com/originals/0e/a5/63/0ea563ecf150fd939c75ec4455b71ba0.jpg" alt="My avatar" width="200" height="200">
+                    </div>
+                </div>
+                <div>
+                    <h1>Pavel Yrosh</h1>
+                    <h2>Web Developer</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="first-row">
+            <div>
+                <h2>Contacts:</h2>
+                <ul class="skills">
+                    <li><b>Phone:</b> +375336898879</li>
+                    <li><b>Telegram:</b> @ZeddikusZZ</li>
+                    <li><b>Emails:</b> epiccinemabattles@gmail.com, py@bel.biz</li>
+                    <li><b>GitHub:</b> ErricoMallatesta</li>
+                    <li><b>GitLab:</b> Zeddikus97</li>
+                </ul>
+            </div>
+            <hr>
+        </section>
+        
+        <section>
+            <div>      
+                <h2>Summary</h2>
+                <p>
+                    My goal is to realize myself as a programmer. Like to learn new languages and opportunities, and solve unusual problems.<br>
+                    I want to recall the basic skills and the basis of the language again, because during the current projects I forgot a little. This will give me the opportunity to be more independent in choosing a job and implementing projects.
+                </p>
+            </div>
+            <hr>
+        </section>
+
+        <section>
+            <div>
+                <h2>Skills:</h2>
+                <ul>
+                    <li>JS, React/Redux, Node.js(Express.js), JQuery</li>
+                    <li>Docker</li>
+                    <li>PHP, Wordpress, Laravel</li>
+                    <li>Salesforce.com, Apex, VisualForce</li>
+                    <li>SQL, PostgresSQL, MS SQL Server</li>
+                    <li>Git</li>
+                    <li>Windows, Linux as OS</li>
+                    <li>basic knowledges of C#(ASP.NET), Python,</li>
+                </ul>
+            </div>
+            <hr>
+        </section>
+
+        <section>
+            <div>      
+                <h2>Code examples:</h2>
+                <code>
+                    const environment = process.env.ENVIRONMENT || 'development'<br/>
+const config_knex = require('../../../../../../knexfile.js')[environment];<br/>
+const knex = require('knex')(config_knex);<br/>
+<br/>
+function increaseDepthCounterGoingUp(table_list, table_name, additional_depth){<br/>
+  if (table_list[table_name]===undefined) {<br/>
+    table_list[table_name] = { name:table_name, depth: additional_depth }<br/>
+  }<br/>
+  else if (table_list[table_name]['relations']===undefined) {<br/>
+    table_list[table_name]['depth'] = Math.max(table_list[table_name]['depth'], additional_depth);<br/>
+  }<br/>
+  else {<br/>
+    table_list[table_name]['depth'] = Math.max(table_list[table_name]['depth'], additional_depth);<br/>
+    table_list[table_name]['relations'].forEach(element => {<br/>
+      table_list=increaseDepthCounterGoingUp(table_list, element, additional_depth+1)<br/>
+    });<br/>
+  }<br/>
+  return table_list<br/>
+}<br/>
+<br/>
+function increaseDepthCounterGoingDown(tables_list, table_name, accum, depth){<br/>
+  for (let low_relationship of Object.keys(tables_list)){<br/>
+    if (tables_list[low_relationship]['relations']!==undefined){<br/>
+      if (tables_list[low_relationship]['relations'].includes(table_name)) {<br/>
+        accum[`${table['tablename']}`] = accum[`${table['tablename']}`]!==undefined<br/>
+        ? Math.max(tables_list[table_name]['depth'], depth)<br/>
+        : depth;<br/>
+        accum=increaseDepthCounterGoingDown(tables_list, low_relationship, accum, depth+1);<br/>
+      }<br/>
+    }<br/>
+  }<br/>
+  return accum;<br/>
+}<br/>
+<br/>
+async function getInfo() {<br/>
+  const result_tables = await knex.raw(`SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname='public'`);<br/>
+  const tables_seeds = {};<br/>
+  let tables_list = {};<br/>
+  console.log(result_tables.rows);<br/>
+  for await (table of result_tables.rows.reverse()) {<br/>
+    if(!table['tablename'].includes('-')){<br/>
+      let result_seed = await knex.raw(`SELECT * FROM ${table['tablename']}`);<br/>
+      let result_relations = await knex.raw(`SELECT COALESCE(array_agg(ccu.table_name::TEXT), ARRAY[]::text[]) as rels<br/>
+      FROM information_schema.table_constraints AS tc <br/>
+      JOIN information_schema.constraint_column_usage AS ccu<br/>
+        ON ccu.constraint_name = tc.constraint_name<br/>
+        AND ccu.table_schema = tc.table_schema<br/>
+      WHERE tc.constraint_type = 'FOREIGN KEY' AND tc.table_name='${table['tablename']}';`);<br/>
+      let relations=result_relations['rows'][0]['rels'];<br/>
+      let seed=result_seed['rows'];<br/>
+      tables_list[`${table['tablename']}`] = tables_list[`${table['tablename']}`]===undefined<br/>
+      ? { name:table['tablename'], seeds: seed, depth: 0, relations: relations}<br/>
+      : { name:table['tablename'], seeds: seed, depth: tables_list[`${table['tablename']}`].depth, relations: relations}<br/>
+      let accum = increaseDepthCounterGoingDown(tables_list, table['tablename'], {}, 1);<br/>
+      if(!(Object.entries(accum).length === 0 && accum.constructor === Object)){<br/>
+        for (let name of Object.keys(accum)){<br/>
+          tables_list[name]['depth']=Math.max(tables_list[name]['depth'], accum[name])<br/>
+        }<br/>
+      }<br/>
+      for (let high_relationship of relations){<br/>
+        if (tables_list[high_relationship]===undefined) tables_list[high_relationship] = { name:high_relationship, depth: 0 }<br/>
+        else tables_list=increaseDepthCounterGoingUp(tables_list, high_relationship, tables_list[`${table['tablename']}`]['depth']+1);<br/>
+      }<br/>
+
+    }<br/>
+  }<br/>
+  let tables_order = Object.keys(tables_list).sort((a,b) => (tables_list[a].depth > tables_list[b].depth) ? 1 : -1)<br/>
+  console.log(tables_list);<br/>
+  tables_seeds['tables_order']=tables_order;<br/>
+  for (table in tables_list){<br/>
+    tables_seeds[table]=tables_list[table].seeds; <br/>
+  }<br/>
+  return tables_seeds;<br/>
+}<br/>
+<br/>
+
+async function writeInFile(json) {<br/>
+  const fs = require('fs');<br/>
+  fs.writeFile(<br/>
+    'seeds/json_data/data.json',<br/>
+    JSON.stringify(json),<br/>
+    function(err) {<br/>
+      console.log(err);<br/>
+      //if (err) throw err;<br/>
+      console.log('complete');<br/>
+      process.exit();<br/>
+    },<br/>
+  )<br/>
+}<br/>
+<br/>
+(async() => {<br/>
+  const table_data = await getInfo();<br/>
+  //console.log(table_data);<br/>
+  await writeInFile(table_data);  <br/>
+  //console.log(table_data['core_store']);<br/>
+})()<br/>
+                </code>
+            </div>
+            <hr>
+        </section>
+
+        <section>
+            <div>      
+                <h2>Experience:</h2>
+                <p>
+                    Projects on SENLA courses<br>
+                    Working ad a programer on IMAGURU own project<br>
+                    GRSU-lab<br>
+                </p>
+            </div>
+            <hr>
+        </section>
+
+        <section>
+            <div>      
+                <h2>Education:</h2>
+                <p>
+                    University education as a math-programmer<br>
+                    SENLA Salesforce courses with certificate<br>
+                </p>
+            </div>
+            <hr>
+        </section>
+
+        <section>
+            <div>      
+                <h2>English:</h2>
+                <p>
+                    Probably B1. Have good reading and writing skills.<br>
+                    Can read library documentation.<br>
+                </p>
+            </div>
+            <hr>
+        </section>
+</main>
+
+<footer>
+<details>
+  <summary>Pavel Yrosh</summary>
+  <p>2021.</p>
+  <p>All Rights Reserved.</p>
+</details>
+</footer>
+</body>
+</html>
