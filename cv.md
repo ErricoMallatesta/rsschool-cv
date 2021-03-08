@@ -11,8 +11,8 @@
  
 **Email:** epiccinemabattles@gmail.com, py@bel.biz  
  
-**GitHub: ErricoMallatesta
-**GitLab: Zeddikus97  
+**GitHub:** ErricoMallatesta  
+**GitLab:** Zeddikus97  
  
 ***
 ## Summary:
